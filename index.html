@@ -11,6 +11,9 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body { overflow-x: hidden; max-width: 100%; }
+    img, svg { max-width: 100%; }
+
     :root {
       --espresso:   #3D3A34;
       --warm-tan:   #D4A668;
@@ -49,8 +52,11 @@
       box-shadow: 0 2px 16px rgba(61,58,52,0.12);
     }
 
-    .nav-logo img {
+    .nav-logo img,
+    .nav-logo svg {
       height: 48px;
+      width: auto;
+      max-width: 100%;
       display: block;
     }
 
@@ -86,6 +92,7 @@
     /* ── HERO LOGO ───────────────────────────────────── */
     .hero-logo-wrap {
       display: inline-block;
+      max-width: 100%;
       background: #F1E8D5;
       border-top: 4px solid var(--warm-tan);
       border-bottom: 4px solid var(--warm-tan);
@@ -93,9 +100,11 @@
       margin-bottom: 36px;
       box-shadow: 0 4px 28px rgba(0,0,0,0.28);
     }
-    .hero-logo-img {
+    .hero-logo-img,
+    .hero-logo-wrap svg {
       height: 105px;
       width: auto;
+      max-width: 100%;
       display: block;
       margin: 0 auto;
     }
@@ -651,7 +660,8 @@
       margin-bottom: 32px;
     }
 
-    .footer-logo img { height: 40px; margin-bottom: 16px; }
+    .footer-logo img,
+    .footer-logo svg { height: 40px; width: auto; max-width: 100%; margin-bottom: 16px; }
 
     .footer-tagline {
 
@@ -781,8 +791,12 @@
 
       /* Hero */
       #hero { padding: 100px 24px 60px; min-height: auto; }
-      .hero-logo-wrap { padding: 12px 24px; margin-bottom: 24px; }
-      .hero-logo-img { height: 72px; }
+      .hero-logo-wrap { padding: 12px 18px; margin-bottom: 24px; }
+      .hero-logo-img,
+      .hero-logo-wrap svg { height: 60px; }
+
+      /* Footer side padding fits narrow viewports */
+      footer { padding: 48px 20px 28px; }
       .hero-title { font-size: 32px; line-height: 1.2; }
       .hero-sub { font-size: 16px; margin-bottom: 28px; }
       .hero-actions { flex-direction: column; align-items: center; }
